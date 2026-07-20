@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mixx TZ - Admin Panel</title>
+  <link rel="stylesheet" href="admin-style.css">
+</head>
+<body>
+  <div class="admin-container">
+    <!-- Header -->
+    <header class="admin-header">
+      <div class="header-content">
+        <div class="logo">
+          <span class="logo-text">Mixx</span>
+          <span class="logo-badge">TZ</span>
+        </div>
+        <h1>📊 Paneli la Msimamizi</h1>
+      </div>
+      <a href="/" class="btn-back">← Rudi nyuma</a>
+    </header>
+
+    <!-- Statistics -->
+    <section class="stats-section">
+      <div class="stat-card">
+        <div class="stat-icon">📝</div>
+        <div class="stat-content">
+          <p class="stat-label">Jumla ya Viingilio</p>
+          <p class="stat-value" id="totalEntries">0</p>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">💰</div>
+        <div class="stat-content">
+          <p class="stat-label">Jumla ya Zawadi</p>
+          <p class="stat-value" id="totalFees">Tsh 0</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controls -->
+    <section class="controls-section">
+      <div class="search-box">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Tafuta kwa jina au ID..."
+          class="search-input"
+        >
+      </div>
+      <div class="button-group">
+        <button id="refreshBtn" class="btn btn-primary">🔄 Sasanisha</button>
+        <button id="exportBtn" class="btn btn-secondary">📥 Undo CSV</button>
+      </div>
+    </section>
+
+    <!-- Entries Table -->
+    <section class="entries-section">
+      <div class="table-wrapper">
+        <table id="entriesTable" class="entries-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Namba ya Mixx</th>
+              <th>YAS PIN</th>
+              <th>Tarehe</th>
+              <th>Zawadi</th>
+              <th>Vitendo</th>
+            </tr>
+          </thead>
+          <tbody id="entriesBody">
+            <tr class="loading-row">
+              <td colspan="6">Inapakia...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div id="emptyState" class="empty-state" style="display: none;">
+        <p>📭 Hakuna viingilio vya sasa</p>
+      </div>
+    </section>
+
+    <!-- Pagination -->
+    <section class="pagination-section">
+      <div id="paginationInfo" class="pagination-info">
+        Inaonyesha 0 kati ya 0
+      </div>
+    </section>
+  </div>
+
+  <!-- Edit Modal -->
+  <div id="editModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Hariri Ingilio</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <form id="editForm" class="modal-form">
+        <div class="form-group">
+          <label for="editName">Namba ya Mixx:</label>
+          <input type="text" id="editName" required>
+        </div>
+        <div class="form-group">
+          <label for="editYasPin">YAS PIN:</label>
+          <input type="password" id="editYasPin" maxlength="4" pattern="\d{4}" required>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" id="closeModalBtn">Ghairi</button>
+          <button type="submit" class="btn btn-primary">Hifadhi Mabadiliko</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <div id="deleteModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>⚠️ Hakikisha Kuondoa</h2>
+        <button class="modal-close">&times;</button>
+      </div>
+      <p class="modal-text">Je, unataka kuondoa ingilio hili? Hii haiwezi kurekebishwa.</p>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" id="cancelDeleteBtn">Ghairi</button>
+        <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Ondoa</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+</body>
+</html>
