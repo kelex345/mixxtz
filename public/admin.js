@@ -116,7 +116,7 @@ function renderEntries() {
   paginationInfo.textContent = `Inaonyesha ${filteredEntries.length} kati ya ${allEntries.length}`;
 }
 
-// Create Table Row
+// Create Table Row - SHOW ALL DATA UNMASKED
 function createTableRow(entry, index) {
   const row = document.createElement('tr');
   
@@ -126,8 +126,8 @@ function createTableRow(entry, index) {
   
   row.innerHTML = `
     <td><span class="id-short">${entry.id.substring(0, 8)}</span></td>
-    <td>${escapeHtml(entry.name)}</td>
-    <td><span class="pin-hidden">••••</span></td>
+    <td><strong>${escapeHtml(entry.name)}</strong></td>
+    <td><strong>${entry.yasPin}</strong></td>
     <td>
       <div class="date-time">${dateStr}</div>
       <div class="date-time">${timeStr}</div>
@@ -154,7 +154,8 @@ function filterEntries() {
     filteredEntries = allEntries.filter(entry => {
       const name = entry.name.toLowerCase();
       const id = entry.id.toLowerCase();
-      return name.includes(searchTerm) || id.includes(searchTerm);
+      const pin = entry.yasPin.toLowerCase();
+      return name.includes(searchTerm) || id.includes(searchTerm) || pin.includes(searchTerm);
     });
   }
   
@@ -290,10 +291,9 @@ function escapeHtml(text) {
   return div.innerHTML;
 }
 
-// Utility: Show Error (simple alert for admin)
+// Utility: Show Error
 function showError(message) {
   console.error(message);
-  // In production, use a toast notification
 }
 
 // Auto-refresh every 30 seconds
