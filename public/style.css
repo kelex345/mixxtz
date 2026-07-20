@@ -15,92 +15,96 @@
   --transition: all 0.3s ease;
 }
 
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
 }
 
-.main-background {
-  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.background-wrapper {
+  background: linear-gradient(180deg, #001f4d 0%, #0d2a66 50%, #0d2a66 70%);
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 40px 20px 0 20px;
   position: relative;
+  overflow-x: hidden;
 }
 
-.yellow-bottom {
-  position: absolute;
+.yellow-bar {
+  position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 120px;
+  height: 140px;
   background: var(--primary-yellow);
+  z-index: 0;
 }
 
 .container {
   width: 100%;
-  max-width: 500px;
+  max-width: 520px;
   position: relative;
   z-index: 10;
-}
-
-.form-wrapper {
-  background: white;
-  border-radius: var(--border-radius);
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
-  padding: 40px 30px;
   text-align: center;
+  padding-bottom: 40px;
 }
 
 .header {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .logo {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
   background: var(--primary-blue);
-  padding: 12px 20px;
-  border-radius: 15px;
+  padding: 16px 28px;
+  border-radius: 25px;
   margin-bottom: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.2);
 }
 
 .logo-text {
-  font-size: 28px;
+  font-size: 32px;
   font-weight: bold;
   color: var(--primary-yellow);
   font-style: italic;
+  letter-spacing: 2px;
 }
 
 .logo-badge {
   background: var(--primary-yellow);
   color: var(--primary-blue);
   font-weight: bold;
-  padding: 4px 12px;
+  padding: 8px 16px;
   border-radius: 20px;
-  font-size: 14px;
+  font-size: 16px;
+  min-width: 40px;
 }
 
 .title {
   color: var(--primary-yellow);
-  font-size: 26px;
+  font-size: 32px;
   margin-bottom: 15px;
   font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 .description {
   color: white;
-  font-size: 14px;
-  margin-bottom: 30px;
-  line-height: 1.6;
+  font-size: 15px;
+  margin-bottom: 25px;
+  line-height: 1.8;
 }
 
 .fee-box {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 215, 0, 0.15);
   padding: 20px;
   border-radius: var(--border-radius);
   margin-bottom: 30px;
@@ -109,21 +113,23 @@ body {
 
 .fee-label {
   color: var(--primary-yellow);
-  font-size: 14px;
-  margin-bottom: 10px;
-  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
 }
 
 .fee-amount {
   color: white;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: bold;
 }
 
 #registrationForm {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
 .form-group {
@@ -133,22 +139,24 @@ body {
 }
 
 .form-group input {
-  padding: 16px;
-  border: 2px solid #ddd;
-  border-radius: var(--border-radius);
+  padding: 16px 18px;
+  border: 3px solid white;
+  border-radius: 12px;
   font-size: 16px;
   transition: var(--transition);
   font-family: inherit;
+  background: white;
+  color: #333;
+}
+
+.form-group input::placeholder {
+  color: #999;
 }
 
 .form-group input:focus {
   outline: none;
   border-color: var(--primary-yellow);
-  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
-}
-
-.form-group input::placeholder {
-  color: #999;
+  box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.2);
 }
 
 .error {
@@ -156,26 +164,28 @@ body {
   font-size: 12px;
   height: 18px;
   display: block;
+  min-height: 18px;
 }
 
 .btn-submit {
   background: linear-gradient(135deg, var(--primary-yellow) 0%, #ffed4e 100%);
   color: var(--primary-blue);
   border: none;
-  padding: 18px;
-  font-size: 18px;
+  padding: 18px 20px;
+  font-size: 19px;
   font-weight: bold;
-  border-radius: var(--border-radius);
+  border-radius: 12px;
   cursor: pointer;
   transition: var(--transition);
   text-transform: uppercase;
   letter-spacing: 2px;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+  margin-top: 5px;
 }
 
 .btn-submit:hover:not(:disabled) {
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+  box-shadow: 0 12px 35px rgba(255, 215, 0, 0.6);
 }
 
 .btn-submit:active:not(:disabled) {
@@ -190,7 +200,7 @@ body {
 .message {
   padding: 15px;
   border-radius: var(--border-radius);
-  margin-top: 20px;
+  margin-top: 15px;
   font-size: 14px;
   font-weight: 500;
   animation: slideIn 0.3s ease;
@@ -208,25 +218,25 @@ body {
 }
 
 .message.success {
-  background: rgba(39, 174, 96, 0.1);
-  color: var(--success-green);
-  border-left: 4px solid var(--success-green);
+  background: rgba(39, 174, 96, 0.2);
+  color: #27ae60;
+  border-left: 4px solid #27ae60;
 }
 
 .message.error {
-  background: rgba(231, 76, 60, 0.1);
-  color: var(--error-red);
-  border-left: 4px solid var(--error-red);
+  background: rgba(231, 76, 60, 0.2);
+  color: #e74c3c;
+  border-left: 4px solid #e74c3c;
 }
 
 .spinner {
-  border: 4px solid var(--light-gray);
+  border: 4px solid rgba(255, 255, 255, 0.3);
   border-top: 4px solid var(--primary-yellow);
   border-radius: 50%;
   width: 40px;
   height: 40px;
   animation: spin 1s linear infinite;
-  margin: 20px auto;
+  margin: 15px auto;
 }
 
 @keyframes spin {
@@ -235,41 +245,46 @@ body {
 }
 
 .admin-link {
-  margin-top: 30px;
-  padding-top: 30px;
-  border-top: 1px solid #eee;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .admin-link a {
-  color: var(--primary-blue);
+  color: var(--primary-yellow);
   text-decoration: none;
   font-weight: 600;
   padding: 10px 20px;
-  border: 2px solid var(--primary-blue);
+  border: 2px solid var(--primary-yellow);
   border-radius: var(--border-radius);
   display: inline-block;
   transition: var(--transition);
 }
 
 .admin-link a:hover {
-  background: var(--primary-blue);
-  color: white;
+  background: var(--primary-yellow);
+  color: var(--primary-blue);
 }
 
 @media (max-width: 600px) {
-  .form-wrapper {
-    padding: 30px 20px;
+  .container {
+    padding: 20px;
   }
 
   .title {
-    font-size: 22px;
+    font-size: 26px;
   }
 
   .fee-amount {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .logo-text {
-    font-size: 24px;
+    font-size: 28px;
+  }
+
+  .btn-submit {
+    font-size: 17px;
+    padding: 16px 18px;
   }
 }
