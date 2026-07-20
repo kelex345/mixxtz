@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mixx TZ - Umejishindia Ofa Wa YAS Tigo Pesa</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="form-wrapper">
+      <!-- Header with Logo -->
+      <div class="header">
+        <div class="logo">
+          <span class="logo-text">Mixx</span>
+          <span class="logo-badge">TZ</span>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <h1 class="title">Umejishindia Ofa Wa YAS Tigo Pesa</h1>
+      
+      <!-- Description -->
+      <p class="description">
+        Karibú Ingiza namba yako ya simu na Neno Siri (YAS PIN - 4 namba) ili kupatá ofa.
+      </p>
+
+      <!-- Fee Information -->
+      <div class="fee-box">
+        <p class="fee-label">Kiwango cha Ofa kinachoweza kupatikana:</p>
+        <p class="fee-amount">Tsh 800,000</p>
+      </div>
+
+      <!-- Form -->
+      <form id="registrationForm">
+        <!-- Name Input -->
+        <div class="form-group">
+          <input 
+            type="text" 
+            id="name" 
+            placeholder="Nambari ya Mixx" 
+            required
+            maxlength="20"
+            pattern="[a-zA-Z0-9\s]+"
+          >
+          <span class="error" id="nameError"></span>
+        </div>
+
+        <!-- YAS PIN Input -->
+        <div class="form-group">
+          <input 
+            type="password" 
+            id="yasPin" 
+            placeholder="YAS Nambari ya Siri" 
+            required
+            maxlength="4"
+            pattern="\d{4}"
+            inputmode="numeric"
+          >
+          <span class="error" id="yasPinError"></span>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" class="btn-submit">TOA ZAWADI</button>
+      </form>
+
+      <!-- Success/Error Messages -->
+      <div id="successMessage" class="message success" style="display: none;"></div>
+      <div id="errorMessage" class="message error" style="display: none;"></div>
+
+      <!-- Loading State -->
+      <div id="loadingSpinner" class="spinner" style="display: none;"></div>
+
+      <!-- Admin Link -->
+      <div class="admin-link">
+        <a href="/admin">📊 Admin Panel</a>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
