@@ -22,7 +22,7 @@ html, body {
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Arial', 'Segoe UI', sans-serif;
 }
 
 .background-wrapper {
@@ -31,7 +31,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 40px 20px 0 20px;
+  padding: 60px 20px 0 20px;
   position: relative;
   overflow-x: hidden;
 }
@@ -48,100 +48,53 @@ body {
 
 .container {
   width: 100%;
-  max-width: 520px;
+  max-width: 700px;
   position: relative;
   z-index: 10;
   text-align: center;
   padding-bottom: 40px;
 }
 
-.header {
-  margin-bottom: 25px;
-}
-
-.logo {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0;
-  background: var(--primary-blue);
-  padding: 16px 24px;
-  border-radius: 28px;
-  margin-bottom: 20px;
-  border: 3px solid rgba(255, 255, 255, 0.3);
-  position: relative;
-  width: 140px;
-  height: 80px;
-}
-
-.logo-text {
-  font-size: 36px;
-  font-weight: bold;
+.main-title {
   color: var(--primary-yellow);
-  font-style: italic;
+  font-size: 48px;
+  margin-bottom: 40px;
+  font-weight: 900;
   letter-spacing: 2px;
-  margin-right: -8px;
-}
-
-.logo-badge {
-  background: var(--primary-yellow);
-  color: var(--primary-blue);
-  font-weight: bold;
-  padding: 8px 14px;
-  border-radius: 50%;
-  font-size: 18px;
-  min-width: 50px;
-  height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  bottom: -5px;
-  right: -5px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.title {
-  color: var(--primary-yellow);
-  font-size: 32px;
-  margin-bottom: 15px;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-}
-
-.description {
-  color: white;
-  font-size: 15px;
-  margin-bottom: 25px;
-  line-height: 1.8;
+  line-height: 1.3;
 }
 
 .fee-box {
-  background: rgba(255, 215, 0, 0.15);
-  padding: 20px;
-  border-radius: var(--border-radius);
+  background: #3d4a4d;
+  padding: 30px;
+  border-radius: 20px;
   margin-bottom: 30px;
-  border: 2px solid var(--primary-yellow);
+  border: 3px solid var(--primary-yellow);
 }
 
 .fee-label {
-  color: var(--primary-yellow);
-  font-size: 15px;
-  margin-bottom: 8px;
+  color: white;
+  font-size: 14px;
+  margin-bottom: 15px;
   font-weight: 700;
-  letter-spacing: 0.3px;
+  letter-spacing: 1px;
 }
 
 .fee-amount {
   color: white;
-  font-size: 28px;
-  font-weight: bold;
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.highlight-yellow {
+  color: var(--primary-yellow);
 }
 
 #registrationForm {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 18px;
   margin-bottom: 20px;
 }
 
@@ -152,14 +105,14 @@ body {
 }
 
 .form-group input {
-  padding: 16px 18px;
-  border: 3px solid white;
-  border-radius: 12px;
+  padding: 18px 20px;
+  border: none;
+  border-radius: 15px;
   font-size: 16px;
   transition: var(--transition);
   font-family: inherit;
   background: white;
-  color: #333;
+  color: #666;
 }
 
 .form-group input::placeholder {
@@ -168,8 +121,7 @@ body {
 
 .form-group input:focus {
   outline: none;
-  border-color: var(--primary-yellow);
-  box-shadow: 0 0 0 4px rgba(255, 215, 0, 0.2);
+  box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.3);
 }
 
 .error {
@@ -181,19 +133,19 @@ body {
 }
 
 .btn-submit {
-  background: linear-gradient(135deg, var(--primary-yellow) 0%, #ffed4e 100%);
-  color: var(--primary-blue);
+  background: var(--primary-yellow);
+  color: #1a1a1a;
   border: none;
-  padding: 18px 20px;
-  font-size: 19px;
-  font-weight: bold;
-  border-radius: 12px;
+  padding: 20px 20px;
+  font-size: 18px;
+  font-weight: 900;
+  border-radius: 15px;
   cursor: pointer;
   transition: var(--transition);
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .btn-submit:hover:not(:disabled) {
@@ -280,24 +232,16 @@ body {
 }
 
 @media (max-width: 600px) {
-  .container {
-    padding: 20px;
-  }
-
-  .title {
-    font-size: 26px;
+  .main-title {
+    font-size: 36px;
   }
 
   .fee-amount {
     font-size: 24px;
   }
 
-  .logo-text {
-    font-size: 32px;
-  }
-
   .btn-submit {
-    font-size: 17px;
+    font-size: 16px;
     padding: 16px 18px;
   }
 }
