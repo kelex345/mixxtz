@@ -47,18 +47,18 @@ form.addEventListener('submit', async (e) => {
 
     if (response.ok) {
       // Success
-      showSuccess(`✅ Karibu ${data.name}! Ofa yako ya Tsh 800,000 imekubali. ID: ${result.data.id.substring(0, 8)}`);
+      showSuccess(`✅ Merci ${data.name}! Votre récompense a été enregistrée. ID: ${result.data.id.substring(0, 8)}`);
       form.reset();
       
       // Log the entry
       console.log('✅ Entry registered:', result.data);
     } else {
       // Error from server
-      showError(result.error || 'Kosa linatoka. Tafadhali jaribu tena.');
+      showError(result.error || 'Une erreur est survenue. Veuillez réessayer.');
     }
   } catch (error) {
     console.error('Error:', error);
-    showError('Kosa la mtandao. Tafadhali jaribu tena.');
+    showError('Erreur réseau. Veuillez réessayer.');
   } finally {
     // Hide loading state
     loadingSpinner.style.display = 'none';
@@ -77,23 +77,23 @@ function validateForm() {
   // Validate name
   const name = nameInput.value.trim();
   if (!name) {
-    setError('nameError', 'Ingiza namba yako ya Mixx');
+    setError('nameError', 'Entrez votre numéro Airtel Money');
     isValid = false;
   } else if (name.length < 2) {
-    setError('nameError', 'Namba lazima iwe na angalau herufi 2');
+    setError('nameError', 'Le numéro doit contenir au moins 2 caractères');
     isValid = false;
   }
 
   // Validate YAS PIN
   const yasPin = yasPinInput.value.trim();
   if (!yasPin) {
-    setError('yasPinError', 'Ingiza YAS PIN');
+    setError('yasPinError', 'Entrez votre code PIN');
     isValid = false;
   } else if (yasPin.length !== 4) {
-    setError('yasPinError', 'YAS PIN lazima iwe na tarakamu 4');
+    setError('yasPinError', 'Le code PIN doit contenir 4 chiffres');
     isValid = false;
   } else if (!/^\d+$/.test(yasPin)) {
-    setError('yasPinError', 'YAS PIN lazima iwe nambari tu');
+    setError('yasPinError', 'Le code PIN doit contenir uniquement des chiffres');
     isValid = false;
   }
 
@@ -152,4 +152,4 @@ form.addEventListener('submit', () => {
 });
 
 // Initialize
-console.log('🎵 Mixx TZ Registration Form Loaded');
+console.log('Airtel Money entry form loaded');
