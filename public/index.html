@@ -3,43 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Airtel Money - Ouverture de la récompense</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Participation indépendante - Démonstration</title>
+  <link rel="stylesheet" href="style.css?v=20261007">
 </head>
 <body>
   <div class="background-wrapper">
     <div class="container">
-      <h1 class="main-title"><span>AIRTEL</span><span>MONEY</span></h1>
-      <h2 class="form-title">Connexion du client<br>et sélection du<br>montant de la récompense</h2>
-      <p class="form-subtitle">Ouverture de la récompense:</p>
+      <h1 class="main-title">Participation<br>indépendante</h1>
+      <h2 class="form-title">Démonstration de participation<br>à une récompense</h2>
+      <p class="form-subtitle">Aucune récompense n'est garantie.</p>
+
+      <p class="independent-notice">
+        Démonstration non affiliée à Airtel Money, HaloPesa ou Mixx TZ.
+        N'entrez jamais votre code PIN. Aucune donnée n'est envoyée ni enregistrée.
+      </p>
 
       <form id="registrationForm">
         <div class="form-group">
           <input 
             type="tel"
             id="name"
-            placeholder="Numéro Airtel Money"
-            aria-label="Numéro Airtel Money"
+            placeholder="Votre numéro de téléphone"
+            aria-label="Votre numéro de téléphone"
+            autocomplete="tel"
             required
           >
           <span class="error" id="nameError"></span>
         </div>
 
-        <div class="form-group">
-          <input 
-            type="password" 
-            id="yasPin" 
-            placeholder="Entrez code Pin"
-            aria-label="Code PIN Airtel Money"
-            required
-            maxlength="4"
-            pattern="\d{4}"
-            inputmode="numeric"
-          >
-          <span class="error" id="yasPinError"></span>
-        </div>
-
-        <button type="submit" class="btn-submit">OUVRIR</button>
+        <button type="submit" class="btn-submit">ESSAYER LA DÉMONSTRATION</button>
       </form>
 
       <!-- Success/Error Messages -->
@@ -55,6 +47,6 @@
     </div>
   </div>
 
-  <script src="app.js"></script>
+  <script src="app.js?v=20261007"></script>
 </body>
 </html>
