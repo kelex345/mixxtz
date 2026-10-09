@@ -5,8 +5,8 @@
 }
 
 :root {
-  --airtel-red: #f02e0c;
-  --button-blue: #ffdf00;
+  --airtel-red: #920d1d;
+  --button-blue: #1010f4;
   --white: #fff;
   --transition: all 0.2s ease;
 }
@@ -44,11 +44,12 @@ body {
 }
 
 .main-title {
+  color: #0808f4;
   margin-bottom: 56px;
-  color: var(--white);
   font-size: clamp(40px, 8vw, 76px);
-  font-weight: 800;
-  line-height: 1.05;
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 2px;
 }
 
 .form-title {
@@ -110,7 +111,7 @@ body {
   padding: 24px 20px;
   border: 0;
   border-radius: 19px;
-  color: #241700;
+  color: var(--white);
   background: var(--button-blue);
   box-shadow: 0 8px 18px rgba(0, 0, 90, 0.2);
   cursor: pointer;
@@ -123,7 +124,7 @@ body {
 
 .btn-submit:hover:not(:disabled),
 .btn-submit:focus-visible:not(:disabled) {
-  background: #ffe94d;
+  background: #2828ff;
   transform: translateY(-2px);
 }
 
@@ -177,7 +178,7 @@ body {
 .independent-notice {
   margin: -24px 0 30px;
   padding: 14px;
-  border: 1px solid rgba(255, 223, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.35);
   border-radius: 12px;
   color: #fff;
   background: rgba(90, 12, 0, 0.32);
